@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageViewWithGradient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-nL-N8w">
+                                <rect key="frame" x="90" y="60" width="1740" height="960"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t7L-4a-pJ9">
+                                    <size key="itemSize" width="500" height="500"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="FRP-OR-ZEc" customClass="ImageCollectionViewCell" customModule="ImageViewWithGradient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool-Backgrounds-HD-Image-Pictures" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isa-rH-lI2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-vg-mzQ" customClass="GradientView" customModule="ImageViewWithGradient" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Di6-vg-mzQ" secondAttribute="trailing" id="33V-iI-3I7"/>
+                                            <constraint firstAttribute="bottom" secondItem="Di6-vg-mzQ" secondAttribute="bottom" id="FMW-8V-FD7"/>
+                                            <constraint firstAttribute="bottom" secondItem="isa-rH-lI2" secondAttribute="bottom" id="H13-DQ-5XC"/>
+                                            <constraint firstItem="Di6-vg-mzQ" firstAttribute="leading" secondItem="FRP-OR-ZEc" secondAttribute="leading" id="UVn-vU-QU6"/>
+                                            <constraint firstAttribute="trailing" secondItem="isa-rH-lI2" secondAttribute="trailing" id="h1Z-qc-jsF"/>
+                                            <constraint firstItem="Di6-vg-mzQ" firstAttribute="top" secondItem="FRP-OR-ZEc" secondAttribute="top" id="lYy-H1-9QC"/>
+                                            <constraint firstItem="isa-rH-lI2" firstAttribute="leading" secondItem="FRP-OR-ZEc" secondAttribute="leading" id="oiA-r5-7fT"/>
+                                            <constraint firstItem="isa-rH-lI2" firstAttribute="top" secondItem="FRP-OR-ZEc" secondAttribute="top" id="tNl-dg-ycV"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="mGR-uF-EqL"/>
+                                        <size key="customSize" width="500" height="500"/>
+                                        <connections>
+                                            <outlet property="gradientView" destination="Di6-vg-mzQ" id="YDd-hQ-P2r"/>
+                                            <outlet property="imageView" destination="isa-rH-lI2" id="frV-aJ-Eyc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ka5-07-D3g"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZJs-Dk-OId"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="mcl-nL-N8w" secondAttribute="trailing" id="LQd-W3-AkU"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="bottom" secondItem="mcl-nL-N8w" secondAttribute="bottom" id="hU5-aA-BBi"/>
+                            <constraint firstItem="mcl-nL-N8w" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="pBB-05-WHC"/>
+                            <constraint firstItem="mcl-nL-N8w" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" id="ttA-XC-flK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="mcl-nL-N8w" id="jYD-Kz-Epo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cool-Backgrounds-HD-Image-Pictures" width="1440" height="1080"/>
+    </resources>
+</document>
